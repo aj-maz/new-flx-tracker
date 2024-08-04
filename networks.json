@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "FLX": {
+      "address": "0x6243d8cea23066d098a15582d81a598b4e8391f4",
+      "startBlock": 11848366
+    }
+  }
+}
