@@ -1,6 +1,28 @@
-type ExampleEntity @entity {
-  id: Bytes!
-  count: BigInt!
-  src: Bytes! # address
-  guy: Bytes! # address
+type User @entity {
+  id: ID!
+  balance: BigInt!
+  votingPower: BigInt!
+  balanceHistory: [BalanceHistory!]! @derivedFrom(field: "user")
+  votingPowerHistory: [VotingPowerHistory!]! @derivedFrom(field: "user")
+}
+
+type Block @entity {
+  id: ID!
+  number: BigInt!
+  at: BigInt!
+  totalSupply: BigInt!
+}
+
+type BalanceHistory @entity {
+  id: ID!
+  user: User!
+  amount: BigInt!
+  block: Block!
+}
+
+type VotingPowerHistory @entity {
+  id: ID!
+  user: User!
+  amount: BigInt!
+  block: Block!
 }
